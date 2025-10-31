@@ -1,0 +1,24 @@
+---
+export const prerender = false;
+import { getNews } from "../server/getNews";
+import Layout from '../layouts/Layout.astro';
+
+let news: string = '';
+
+try {
+  const rawNews = await getNews(Astro.params.id ?? "");
+  const match = rawNews.summary.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  news =  match ? match[1] : "";
+} catch (err: any) {
+  if (err?.status) console.error(`[id page]: ${Astro.params.id} Not found`);
+  else console.error(err);
+}
+
+if (!news) {
+  return Astro.redirect("/not-found", 301);
+}
+---
+
+<Layout>
+  <div class="news" set:html={news}></div>
+</Layout>

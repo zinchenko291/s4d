@@ -1,0 +1,27 @@
+{
+    "BASE_URL": "http://localhost:5193",
+    "API_KEY": "your-secret-key",
+    "BOT_TOKEN": "",
+    "REDIS_HOST": "localhost",
+    "REDIS_PORT": 6380,
+    "REDIS_DB": 0,
+    "RABBIT_USER": "guest",
+    "RABBIT_PASS": "guest",
+    "RABBIT_HOST": "localhost",
+    "RABBIT_PORT": "5672",
+    "LANGUAGES_FOLDER": "src/infrastructure/localization",
+    "AI": {
+        "TOKEN": ""./
+        "BASE_MODEL": "gpt-4o-mini",
+        "BASE_URL": "https://api.proxyapi.ru",
+        "TOKEN_LIMIT": 128,
+        "MAX_RETRIES": 3
+    },
+    "ENDPOINT": {
+        "HOST": "localhost",
+        "PORT": "5216",
+        "ALLOWED_HOST": [
+            "::1"
+        ]
+    }
+}

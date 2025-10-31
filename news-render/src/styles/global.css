@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+.news {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+  color: #222;
+  background: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+
+/* Заголовки */
+.news h1, .news h2, .news h3, .news h4, .news h5, .news h6 {
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 1.5em 0 0.6em;
+  color: #1a1a1a;
+}
+
+.news h1 { font-size: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.3em; }
+.news h2 { font-size: 1.6rem; border-left: 4px solid #0077ff; padding-left: 0.5em; }
+.news h3 { font-size: 1.3rem; color: #333; }
+
+/* Параграфы */
+.news p {
+  margin: 1em 0;
+  font-size: 1rem;
+}
+
+/* Ссылки */
+.news a {
+  color: #0077ff;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: all 0.2s ease;
+}
+
+.news a:hover {
+  color: #0055cc;
+  border-bottom-color: transparent;
+}
+
+/* Изображения */
+.news img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+  border-radius: 0.5rem;
+}
+
+/* Списки */
+.news ul, .news ol {
+  margin: 1em 0 1em 2em;
+  padding: 0;
+}
+
+.news li {
+  margin: 0.4em 0;
+}
+
+/* Цитаты */
+.news blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #0077ff;
+  background: #f8f9fa;
+  font-style: italic;
+  color: #555;
+}
+
+/* Код */
+.news pre, .news code {
+  font-family: "Fira Code", monospace;
+  background: #f4f4f4;
+  border-radius: 0.4rem;
+}
+
+.news code {
+  padding: 0.2em 0.4em;
+}
+
+.news pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+/* Таблицы */
+.news table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.news th, .news td {
+  border: 1px solid #ddd;
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+.news th {
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+/* Горизонтальные линии */
+.news hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
+
+/* Видео, iframe */
+.news iframe, .news video {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 1em auto;
+}

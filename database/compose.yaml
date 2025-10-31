@@ -1,0 +1,35 @@
+﻿services:
+#  databaseservice:
+#    image: databaseservice
+#    build:
+#      context: .
+#      dockerfile: DatabaseService/Dockerfile
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: database
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - pgdata:/var/lib/postgresql
+    ports:
+      - "5434:5432"
+    restart: always
+    networks:
+      - app_net
+    
+  db_my:
+    build: .
+    networks:
+      - app_net
+    environment:
+      - HTTP_PORT=5193
+      - FULL_DB_CONNECTION_STRING=Host=db;Port=5432;Database=database;Username=myuser;Password=mypassword;
+    
+volumes:
+  pgdata:
+
+networks:
+  app_net:
+    driver: bridge
+    name: app_net

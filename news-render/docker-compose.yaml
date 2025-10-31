@@ -1,0 +1,15 @@
+services:
+  news-render:
+    build: ./
+    ports:
+      - 4321:4321
+    environment:
+      - REDIS_PASSWORD=valkey
+      - REDIS_HOST=172.19.244.97
+      - REDIS_PORT=6379
+      - REDIS_PREFIX=news-reader
+      - HOST=0.0.0.0
+      - PORT=4321
+    dns:
+      - 77.88.8.8
+      - 77.88.8.1

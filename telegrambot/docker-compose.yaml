@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - app_net
+
+  telegrambot:
+    build: .
+    environment:
+      - RABBIT_USER=guest
+      - RABBIT_PASS=guest
+      - RABBIT_HOST=rabbitmq
+      - RABBIT_PORT=5672
+      - BASE_URL=http://db_my:5193
+      - BOT_TOKEN=
+    networks:
+      - app_net
+
+volumes:
+  rabbitmq_data:
+
+networks:
+  app_net:
+    external: true

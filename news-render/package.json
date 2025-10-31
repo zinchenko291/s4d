@@ -1,0 +1,20 @@
+{
+  "name": "news-render",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "express": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.5.0",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.2",
+    "axios": "^1.13.1",
+    "redis": "^5.9.0",
+    "tailwindcss": "^4.1.16"
+  }
+}
